@@ -4,11 +4,33 @@ const cards = [
     { name: "C" },
     { name: "D" },
     { name: "E" },
+    { name: "F" },
+    { name: "G" },
+    { name: "H" },
+    { name: "I" },
+    { name: "J" },
+    { name: "K" },
+    { name: "L" },
+    { name: "M" },
+    { name: "N" },
+    { name: "O" },
     { name: "A" },
     { name: "B" },
     { name: "C" },
     { name: "D" },
     { name: "E" },
+    { name: "F" },
+    { name: "G" },
+    { name: "H" },
+    { name: "I" },
+    { name: "J" },
+    { name: "K" },
+    { name: "L" },
+    { name: "M" },
+    { name: "N" },
+    { name: "O" },
+    { name: "P" },
+    { name: "P" },
 ];
 
 function randRange(a, b) {
@@ -35,13 +57,12 @@ function shuffleArray(arr) {
 }
 
 
-function main() {
-    console.log([...cards])
-    shuffleArray(cards)
-    console.log(cards)
-}
+// function main() {
+//     console.log([...cards])
+//     shuffleArray(cards)
+//     console.log(cards)
+// }
 
-main()
 
 
 function checkCards(arr, a, b) {
@@ -66,6 +87,49 @@ function checkCards(arr, a, b) {
     
 }
 
+let cardClicked = (evn) => {
+    console.log(evn.target.innerHTML);
+    let  cardEL = evn.target;
+    let idx = cardEL.id;
+    cardEL = innerHTML = cards[idx].name;
+}
 
 
+function creaCardElement (idx) {
+const board = document.getElementById("board")
+const cardEL = document.createElement("div")
+//cardEL.innerHTML = card.name
+cardEL.id = idx;
+cardEL.className = "card"
+cardEL.onclick = () => {
+   alert(card.name);
+}
+cardEL.onclick = cardClicked;
+board.appendChild(cardEL)
+}
+
+
+// function creaCardElement (idx) {
+// const board = document.getElementById("board")
+// const cardEL = document.createElement("div")
+// // cardEL.innerHTML = card.name
+// cardEL.id = idx
+// cardEL.className = "card"
+// cardEL.onclick = (evn) =>{
+//     console.log(evn.target.innerHTML);
+//     // alert(card.name)
+// };
+// board.appendChild(cardEL)
+// }
+
+
+
+function main() {
+    shuffleArray(cards);
+    for (let idx in cards){
+    creaCardElement(idx)
+}
+}
+
+main()
 
